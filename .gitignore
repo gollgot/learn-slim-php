@@ -1,0 +1,4 @@
+# Composer vendors
+src/vendor
+# PHP Storm (inteliJ) file
+.idea/

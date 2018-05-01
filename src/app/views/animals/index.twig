@@ -1,0 +1,34 @@
+{% extends "layout.twig" %}
+
+
+{% block title %}
+    Tous les animaux
+{% endblock %}
+
+{% block content %}
+    <h1>Tous les animaux ({{ hits.total }})</h1>
+
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th class="text-center">Type</th>
+                <th class="text-center">Nom</th>
+                <th class="text-center">Poids</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for hit in hits.hits %}
+                <tr>
+                    <td>{{ hit._source.genre }}</td>
+                    <td>{{ hit._source.name }}</td>
+                    <td>{{ hit._source.weight }}</td>
+                    <td class="col-lg-2 text-center"><a href="#" class="btn btn-primary">Modifier</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block customJS %}
+{% endblock %}
